@@ -1,0 +1,138 @@
+/*Utilizou-se o @import para importar uma fonte do site google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600&display=swap');
+
+/*No "body" são definidas as propriedades do corpo da página.*/
+body {
+  /*Os estilos dos elementos HTML estão estruturados dentro de uma caixa chamada de "The Box Model". Nessa caixa existe a hierarquia:
+
+    Margin Box 
+    Border Box
+    Padding Box
+    Element Box ( O elemento em si, div, span, entre outros)
+    _________________________________________________________
+    A propriedade margin define o espaçamento fora do conteúdo.
+    margin: top,right,bottom,left (pode-se especificar valores para cada direção do conteúdo)
+    margin: 0; (significa que a margem de todos os lados é = 0) */
+  margin: 0;
+  /*A propriedade padding define o espaçamento dentro dos limites do conteúdo. Assim, padding: 0; (significa que o preenchimento de todos os lados é = 0)*/
+  padding: 0;
+  /*A propriedade height define a altura do elemento. No caso, 100 pixels.*/
+  height: 100vh;
+  /*font-family é a propriedade que especifica a fonte para um elemento. No caso, importamos uma fonte do google fonts chamada "Rajdhani" que é do tipo sans-serif. É uma boa prática definir tanto a familia quanto o tipo, pois caso o navegador não possua a fonte disponível ele irá buscar outra fonte dentro da tipologia sans-serif.*/
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/*Foi definida uma class chamada "video-background" para definir os atributos do vídeo como plano de fundo.*/
+.video-background {
+  /*width é a propriedade que define a largura do elemento. No caso temos um video que será usado como plano de fundo. Logo, width com valor de 100% quer dizer que a class video-background deve ocupar 100% da largura do elemento pai (no caso "body").*/
+  width: 100%;
+  /*A propriedade height define a altura do elemento. No caso, 100vh quer dizer que a altura do elemento será de 100% da viewport ( área exibida na tela)*/
+  height: 100vh;
+  /*A propriedade overflow controla o que acontece com o conteúdo grande demais para caber em um área. Ela especifica se o conteúdo deve ser cortado ou adicionado barra de rolagem. O valor hidden corta o conteúdo, deixando a parte cortada oculta e sem barra de rolagem.*/
+  overflow: hidden;
+  /*A propriedade display com valor flex define o elemento como um flex container, isso significa que todos os elementos filhos serão flex itens.*/
+  display: flex;
+  /*A propriedade justify-content alinha os itens flex no container de acordo com a direção. O valor center alinha os itens no centro do container*/
+  justify-content: center;
+  align-items: center;
+}
+
+/*Foi definida uma class chamada "video-background" para definir os atributos do vídeo como plano de fundo. Dentro dessa class existe a tag "video". Chama-se o elemento pai "video-background" e em seguida o elemento filho "video". Assim, é possível ajustar as propriedades do video.*/
+.video-background video {
+  /*position é a propriedade que define a posição do elemento no documento. O valor fixed indica que o elemento terá um valor fixo em relação a área visível da tela.*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  /*A propriedade z-index define o nível de profundidade de algum elemento na tela. É ela que determina se um elemento esta mais próximo ou mais afastado da tela. Cada item adicionado vai recebendo um valor de z-index de acordo com o contexto de empilhamento do itens. Como queremos que o vídeo fique no fundo de tudo vamos adicionar logo o valor -1000.*/
+  z-index: -1000;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.video-background .conteudo {
+  /*position é a propriedade que define a posição do elemento no documento. O valor "relative" determina que o elemento será posicionado de acordo com o fluxo natural da página.*/
+  position: relative;
+  justify-content: center;
+}
+
+h1 {
+  /*color é o atributo que define a cor do elemento.*/
+  color: white;
+  /*font-size é o atributo que define o tamanho da letra.*/
+  font-size: 35px;
+  font-weight: 450;
+  /*text-shadow é o atributo que define sombra no texto. É possível definir o deslocamento da sombra no texto utilizando valores para cada posição.No exemplo temos uma sombra com deslocamento 0.1 a direita, 0.1 embaixo e 0.2 a esquerda.*/
+  text-shadow: rgb(211, 78, 211) 0.1em 0.1em 0.1em;
+}
+
+.container-menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 1000vh;
+  height: 80px;
+  border: 1px solid rgba(154, 151, 154, 0.441);
+  background-color: rgba(233, 233, 233, 0.213);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 340px;
+  width: 100%;
+  height: 90px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  margin: 1em;
+  padding: 1em;
+}
+
+ul a {
+  text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: bold;
+  font-size: 22px;
+  color: rgba(244, 244, 244, 0.856);
+  text-shadow: rgba(25, 24, 24, 0.774) 0.1em 0.1em 0.2em;
+  line-height: 15px;
+  text-indent: 100px;
+}
+
+a:hover {
+  font-weight: lighter;
+  color: white;
+}
+
+li {
+  margin-right: 100px;
+}
+
+img {
+  position: relative;
+  left: 50px;
+  bottom: 15px;
+  width: 110px;
+  height: 110px;
+}
+
+.zoom {
+  overflow: hidden;
+}
+
+.zoom img {
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.zoom:hover img {
+  width: 400px;
+  height: 400px;
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
